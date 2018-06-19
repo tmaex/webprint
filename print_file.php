@@ -46,7 +46,7 @@ if (isset($_GET['p'])) {
 }
 if (isset($_GET['d'])) {
 	$duplex = trim($_GET['d']);
-	if ($duplex != 1 && $duplex != 2) {
+	if ($duplex != 0 && $duplex != 1 && $duplex != 2) {
 		http_response_code(400);
 		die('Invalid duplex mode');
 	}

@@ -42,4 +42,8 @@ $printers = array(
 	'PDF' => "PDF printer (for testing only)"
 );
 
+// Hide the option to print duplex
+// $defaultDuplex will define the duplex mode
+$supperessDuplex = false;
+
 ?>

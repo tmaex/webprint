@@ -78,6 +78,7 @@
               ?>
             </select>
           </div>
+		  <?php if (!$supperessDuplex) { ?>
           <div class="form-group">
             <label for="duplex-select">Print Mode (Duplex)</label>
             <select class="form-control" id="duplex-select">
@@ -85,7 +86,7 @@
               <option value="2" selected>two-sided</option>
             </select>
           </div>
-          <?php if (!checkIpRange()) { ?>
+          <?php } if (!checkIpRange()) { ?>
           <div class="form-group">
             <label for="password">Password</label>
             <input type="password" id="password" class="form-control" />
@@ -157,7 +158,10 @@
       var e = document.getElementById("printer-select");
       var printer = e.options[e.selectedIndex].value;
       e = document.getElementById("duplex-select");
-      var duplex = e.options[e.selectedIndex].value;
+      var duplex = 0;
+	  if (e !== null) {
+		duplex = e.options[e.selectedIndex].value;
+	  }
       e = document.getElementById("password");
       var password = null;
       if (e !== null) {
